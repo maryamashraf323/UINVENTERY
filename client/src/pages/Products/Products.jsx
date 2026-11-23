@@ -1,4 +1,3 @@
-```jsx
 import React, { useEffect, useState, useCallback } from 'react'
 import { Plus, Search, Pencil, Trash2, X, Package } from 'lucide-react'
 import toast from 'react-hot-toast'
@@ -487,4 +486,3 @@ export default function Products() {
     </div>
   )
 }
-```
