@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react'
-import { Plus, Search, Pencil, Trash2, X } from 'lucide-react'
+import { Plus, Search, Pencil, Trash2, X, Package } from 'lucide-react'
 import toast from 'react-hot-toast'
 import { getProducts, getCategories, createProduct, updateProduct, deleteProduct } from '../../api'
 import StockBadge from '../../components/StockBadge'
