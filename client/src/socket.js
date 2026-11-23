@@ -1,8 +1,9 @@
+```javascript
 import { io } from 'socket.io-client'
 
-// Connect through same host — Vite proxies /socket.io to backend
-// This means all admins on the network just open the same URL
-const socket = io(window.location.origin, {
+const BACKEND_URL = import.meta.env.VITE_API_URL
+
+const socket = io(BACKEND_URL, {
   path: '/socket.io',
   reconnection: true,
   reconnectionDelay: 1000,
@@ -11,3 +12,4 @@ const socket = io(window.location.origin, {
 })
 
 export default socket
+```
