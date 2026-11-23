@@ -1,3 +1,4 @@
+```jsx
 import React, { useEffect, useState, useCallback } from 'react'
 import { Plus, Search, Pencil, Trash2, X, Package } from 'lucide-react'
 import toast from 'react-hot-toast'
@@ -91,17 +92,20 @@ export default function Products() {
       .split(/\s+/)
       .filter(Boolean)
 
-    const searchableText = [
+    const searchableWords = [
       product.name,
       product.category_name,
       product.size,
       product.color
     ]
+      .filter(Boolean)
       .join(' ')
       .toLowerCase()
+      .split(/[\s-]+/)
+      .filter(Boolean)
 
     return searchTerms.every(term =>
-      searchableText.includes(term)
+      searchableWords.some(word => word.startsWith(term))
     )
   })
 
@@ -486,3 +490,4 @@ export default function Products() {
     </div>
   )
 }
+```
