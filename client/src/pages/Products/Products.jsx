@@ -479,7 +479,7 @@ export default function Products() {
       <ConfirmDialog
         open={!!deleteTarget}
         title="Delete Product"
-        message={`Delete "${deleteTarget?.name}"? This cannot be undone.`}
+        message={'Delete "' + (deleteTarget?.name || '') + '"? This cannot be undone.'}
         onConfirm={handleDelete}
         onCancel={() => setDeleteTarget(null)}
       />
